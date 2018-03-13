@@ -1,8 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const config = require('../../knexfile.js')['development'];
+const knex = require('knex')(config);
 
-router.get('/', function(req, res){
-  res.send("hey cool");
-});
+router.delete('/:id', function(req, res) {
+    const id = req.params.id;
+    //knex logic
+    knex('users')
+        .where('id', id)
+        .del()
+        .then(() => {
+            res.send('DELETED')
+        })
+})
 
 module.exports = router;
