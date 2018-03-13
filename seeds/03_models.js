@@ -6,9 +6,11 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('car_model').insert([
         // 'Acura' 1
+        {make_id: 1, model: 'TLX'},
         // 'Alfa Romeo' 2
         // 'Aston Martin' 3
         // 'Audi' 4
+        {make_id: 4, model: 'A4'},
         // 'Bentley' 5
         // 'BMW' 6
         // 'Bugatti' 7
@@ -22,20 +24,27 @@ exports.seed = function(knex, Promise) {
         // 'Ford' 15
         // 'GMC' 16
         // 'Honda' 17
+        {make_id: 17, model: 'Civic'},
+        {make_id: 17, model: 'Accord'},
         // 'Hyundai' 18
         // 'Infiniti' 19
+        {make_id: 19, model: 'Q50'},
         // 'Jaguar' 20
         // 'Jeep' 21
         // 'KIA' 22
         // 'Lamborghini' 23
         // 'Land Rover' 24
         // 'Lexus' 25
+        {make_id: 25, model: 'ES'},
         // 'Maserati' 26
         // 'McLaren' 27
         // 'Mercedes-Benz' 28
+        {make_id: 3, model: 'C-Class'},
         // 'Mini' 29
         // 'Mitsubishi' 30
         // 'Nissan' 31
+        {make_id: 31, model: 'Xterra'},
+        {make_id: 31, model: 'Altima'},
         // 'Porsche' 32
         // 'Ram' 33
         // 'Rolls Royce' 34
@@ -43,11 +52,9 @@ exports.seed = function(knex, Promise) {
         // 'Subaru' 36
         // 'Tesla' 37
         // 'Toyota' 38
+        {make_id: 38, model: 'Camry'}
         // 'Volkswagen' 39
         // 'Volvo' 40
-        {make_id: 1, model: 'rowValue1'},
-        {make_id: 2, model: 'rowValue2'},
-        {make_id: 3, model: 'rowValue3'}
       ]);
     });
 };
