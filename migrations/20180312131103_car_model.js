@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.integer('make_id');
     table.string('model').notNullable();
+    table.string('image')
 
       table.foreign('make_id').references('id').inTable('car_make').onDelete('cascade');
   });

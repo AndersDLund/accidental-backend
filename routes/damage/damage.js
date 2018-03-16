@@ -13,15 +13,13 @@ const filterInt = function(value) {
 router.get('/:id', function(req, res) {
   const id = filterInt(req.params.id)
   console.log(id);
-  knex('user_car')
-  .where('user_id', id)
-  .fullOuterJoin('car_model', 'user_car.model_id', 'car_model.id')
-  .fullOuterJoin('car_make', 'car_model.make_id', 'car_make.id')
-    .then((car) => {
-      if (car.length !== 0) {
-        res.json(car);
+  knex('car_damages').where('user_car_id', id).select('*')
+    .then((damage) => {
+      console.log(damage.length);
+      if (damage.length > 0) {
+        res.json(damage);
       } else {
-        res.send("no car found");
+        res.send("no damage found");
       }
     })
     .catch(function(error) {

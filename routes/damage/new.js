@@ -5,10 +5,9 @@ const knex = require('knex')(config);
 
 router.post('/:id', function(req, res) {
 
-      return knex('user_car').insert({
-          user_id: req.params.id,
-          model_id: req.body.model_id,
-          plate: req.body.plate
+      return knex('car_damage').insert({
+          user_car_id: req.params.id,
+          damage_type_id: req.body.damage_type_id,
         }).then((newCar) => {
           res.sendStatus(200);
         }).catch((err) => {

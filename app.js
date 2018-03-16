@@ -20,6 +20,10 @@ const carRegister = require('./routes/car/register');
 const profileGet = require('./routes/profile/profile');
 const profileDelete = require('./routes/profile/delete');
 const profileEdit = require('./routes/profile/Edit');
+//damage routes
+const damageGet = require('./routes/damage/damage');
+// const damageEdit = require('./routes/damage/edit');
+const damageNew = require('./routes/damage/new');
 
 
 const app = express();
@@ -58,6 +62,10 @@ app.use('/carGet', carGet);
 app.use('/profileGet', profileGet);
 app.use('/profileEdit',profileEdit);
 app.use('/profileDelete', profileDelete);
+//damage
+app.use('/damageGet', damageGet);
+// app.use('/damageEdit', damageEdit);
+app.use('/damageNew', damageNew);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

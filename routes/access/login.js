@@ -12,16 +12,14 @@ router.post('/', (req, res) => {
 
   knex.select('*').from('users').where('email', userObj.email)
     .then((result) => {
-      console.log(result, "login post result");
       if (result.length === 0) {
         return res.send('no account with that email');
       }
-      console.log(userObj.password, 1);
-      console.log(result[0].password, 2);
       return bcrypt.compare(userObj.password, result[0].password)
         .then((loginCheck) => {
-          console.log(loginCheck);
-          if (loginCheck) { // If the passwords match, login and redirect to their bits page.
+          if (loginCheck) { // If the passwords match, login and redirect to their profileEdit page.
+            console.log(result);
+            return res.send(result[0])
             res.cookie('user', '1', {
               maxAge: 900000,
               httpOnly: true,
@@ -29,14 +27,9 @@ router.post('/', (req, res) => {
             });
             req.session.user_id = result[0].id;
             req.session.email = result[0].email;
-
-
-            console.log('Session id', req.session.id);
-
-            // return res.redirect(`/profiles/${req.session.userID}`);
             res.send({
               id: req.session.user_id,
-              email: req.session.email
+              email: req.session.email,
             })
 
           } else { // If passwords don't match, send a 401.
