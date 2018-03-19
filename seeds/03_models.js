@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
         // 'Maserati' 26
         // 'McLaren' 27
         // 'Mercedes-Benz' 28
-        {make_id: 3, model: 'C-Class', image: 'https://www.mercedes-benz.com/wp-content/uploads/sites/3/2014/09/000-Mercedes-Benz-Vehicles-C-Class-Coupe-C-205-1280x636-1280x636.jpg'},
+        {make_id: 28, model: 'C-Class', image: 'https://www.mercedes-benz.com/wp-content/uploads/sites/3/2014/09/000-Mercedes-Benz-Vehicles-C-Class-Coupe-C-205-1280x636-1280x636.jpg'},
         // 'Mini' 29
         // 'Mitsubishi' 30
         // 'Nissan' 31
