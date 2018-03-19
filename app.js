@@ -20,7 +20,7 @@ const carRegister = require('./routes/car/register');
 //profile routes
 const profileGet = require('./routes/profile/profile');
 const profileDelete = require('./routes/profile/delete');
-const profileEdit = require('./routes/profile/Edit');
+const profileEdit = require('./routes/profile/edit');
 //damage routes
 const damageGet = require('./routes/damage/damage');
 // const damageEdit = require('./routes/damage/edit');
