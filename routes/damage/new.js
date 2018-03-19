@@ -5,7 +5,7 @@ const knex = require('knex')(config);
 
 router.post('/:id', function(req, res) {
 
-      return knex('car_damage').insert({
+      return knex('car_damages').insert({
           user_car_id: req.params.id,
           damage_type_id: req.body.damage_type_id,
         }).then((newCar) => {

@@ -13,6 +13,7 @@ const login = require('./routes/access/login');
 const signup = require('./routes/access/signup');
 // car routes
 const carGet = require('./routes/car/car');
+const carGetAll = require('./routes/car/all');
 const carDelete = require('./routes/car/delete');
 const carEdit = require('./routes/car/edit');
 const carRegister = require('./routes/car/register');
@@ -58,6 +59,7 @@ app.use('/carRegister', carRegister);
 app.use('/carDelete', carDelete);
 app.use('/carEdit', carEdit);
 app.use('/carGet', carGet);
+app.use('/carGetAll', carGetAll);
 //profile
 app.use('/profileGet', profileGet);
 app.use('/profileEdit',profileEdit);
