@@ -24,10 +24,10 @@ router.post('/', function(req, res) {
           password: newUser.hashpw,
           organization: newUser.organization
         }).then(() => {
-          res.sendStatus(200);
+          return res.sendStatus(200);
         }).catch((err) => {
           console.error(err);
-          res.sendStatus(500);
+          return res.sendStatus(500);
         });
       });
     });
