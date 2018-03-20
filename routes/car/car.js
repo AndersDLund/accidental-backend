@@ -28,7 +28,7 @@ router.get('/:id', function(req, res) {
       // } else {
       //   res.send("no car found");
       // }
-
+console.log(modelId, 'WHATTTTTT')
         knex('car_model').where('id', modelId)
     .then((carsss)=> {
       console.log(carsss, 'BOOOOOOOOOOOOOOOOOOOOOO');
