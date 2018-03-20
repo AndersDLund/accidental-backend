@@ -14,10 +14,9 @@ router.get('/:id', function(req, res) {
   const id = filterInt(req.params.id)
   console.log(id);
   knex('user_car')
-  .where('user_car.user_id', id)
-  .innerJoin('car_model', 'user_car.model_id', 'car_model.id')
-  .innerJoin('car_make', 'car_model.make_id', 'car_make.id')
-  .select('cool_id', as, 'user_car.id', 'id')
+  .where('user_id', id)
+  // .innerJoin('car_model', 'user_car.model_id', 'car_model.id')
+  // .innerJoin('car_make', 'car_model.make_id', 'car_make.id')
     .then((car) => {
       console.log(car, "this is the car!!!!!");
       if (car.length !== 0) {
