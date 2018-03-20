@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
       if (result.length !== 0) {
         return res.send('Email already exists');
       }
-
+console.log("you made it here");
       return bcrypt.hash(newUser.password, 10, (err, hash) => {
         newUser.hashpw = hash;
 
@@ -24,6 +24,7 @@ router.post('/', function(req, res) {
           password: newUser.hashpw,
           organization: newUser.organization
         }).then(() => {
+          console.log("200 ok");
           return res.sendStatus(200);
         }).catch((err) => {
           console.error(err);
