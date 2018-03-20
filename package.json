@@ -4,6 +4,9 @@
   "engines": {
     "node": "8.1.2"
   },
+  "scripts": {
+  "start": "./bin/www"
+},
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
