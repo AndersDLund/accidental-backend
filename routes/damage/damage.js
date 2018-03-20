@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const config = require('../../knexfile.js')['development'];
+const config = require('../../knexfile.js')['production'];
 const knex = require('knex')(config);
 
 // filterInt - The function from MDN that confirms a particular value is actually an integer. Because parseInt isn't quite strict enough.

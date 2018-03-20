@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const config = require('../../knexfile.js')['development'];
+const config = require('../../knexfile.js')['production'];
 const knex = require('knex')(config);
 
 router.post('/:id', function(req, res) {
