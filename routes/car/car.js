@@ -14,6 +14,7 @@ router.get('/:id', function(req, res) {
   const id = filterInt(req.params.id)
   console.log(id);
   knex('user_car')
+  .select('*')
   .where('user_id', id)
   .fullOuterJoin('car_model', 'user_car.model_id', 'car_model.id')
   .fullOuterJoin('car_make', 'car_model.make_id', 'car_make.id')
