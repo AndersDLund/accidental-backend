@@ -22,7 +22,7 @@ router.get('/:id', function(req, res) {
     .then((car) => {
       console.log(car, "this is the car!!!!!");
       let carId = car.id
-      let modelId = car.model_id
+      let modelId = car[0].model_id
       // if (car.length !== 0) {
       //   res.json(car);
       // } else {
