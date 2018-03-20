@@ -10,7 +10,7 @@ const salt = bcrypt.genSaltSync(8);
 router.post('/', (req, res) => {
   let userObj = req.body;
 
-  knex.select('full_name', 'email', 'organization').from('users').where('email', userObj.email)
+  knex.select('*').from('users').where('email', userObj.email)
     .then((result) => {
       if (result.length === 0) {
         return res.send('no account with that email');
