@@ -15,7 +15,9 @@ router.get('/:id', function(req, res) {
   console.log(id);
   knex('user_car')
   .where('user_id', id)
-
+  .then((userCar)=>{
+    console.log(userCar);
+  })
 
   .leftJoin('car_model', 'user_car.model_id', 'car_model.id')
   .leftJoin('car_make', 'car_model.make_id', 'car_make.id')
