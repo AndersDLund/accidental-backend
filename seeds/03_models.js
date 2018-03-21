@@ -6,7 +6,7 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('car_model').insert([
         // 'Acura' 1
-        {make_id: 1, model: 'TLX', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiWB3l71CfA8wQHZaYDWd-1y6rHlaPqFymYzmDGHTgQyLV74AT3w'},
+        {make_id: 1, model: 'TLX', image:'https://media.ed.edmunds-media.com/acura/tlx/2018/ot/2018_acura_tlx_LIFE1_ot_522175_1280.jpg'},
         // 'Alfa Romeo' 2
         // 'Aston Martin' 3
         // 'Audi' 4
@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         // 'Ford' 15
         // 'GMC' 16
         // 'Honda' 17
-        {make_id: 17, model: 'Civic', image: 'https://s.aolcdn.com/commerce/autodata/images/CAC80HOC021B121001.jpg'},
+        {make_id: 17, model: 'Civic', image: 'https://media.ed.edmunds-media.com/honda/civic/2016/ot/2016_honda_civic_LIFE1_ot_903165_1280.jpg'},
         {make_id: 17, model: 'Accord', image: 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/wp-content/uploads/2016/06/2017_Honda_Accord_Hybrid___1-626x381.jpg'},
         // 'Hyundai' 18
         // 'Infiniti' 19
@@ -35,7 +35,7 @@ exports.seed = function(knex, Promise) {
         // 'Lamborghini' 23
         // 'Land Rover' 24
         // 'Lexus' 25
-        {make_id: 25, model: 'ES', image: 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/16q2/667349/2016-lexus-es-review-car-and-driver-photo-668259-s-original.jpg?crop=1xw:1xh;center,center&resize=900'},
+        {make_id: 25, model: 'ES', image: 'https://media.ed.edmunds-media.com/lexus/es-350/2017/oem/2017_lexus_es-350_sedan_base_fq_oem_1_1280.jpg'},
         // 'Maserati' 26
         // 'McLaren' 27
         // 'Mercedes-Benz' 28
@@ -43,7 +43,7 @@ exports.seed = function(knex, Promise) {
         // 'Mini' 29
         // 'Mitsubishi' 30
         // 'Nissan' 31
-        {make_id: 31, model: 'Xterra', image: 'http://st.motortrend.com/uploads/sites/5/2017/10/2013-Nissan-Xterra-front-three-quarter.jpg?interpolation=lanczos-none&fit=around|660:438'},
+        {make_id: 31, model: 'Xterra', image: 'https://www.nissanusa.com/vlp-assets/suvs/xterra/nissan-xterra-suv-red-side-profile.jpg'},
         {make_id: 31, model: 'Altima', image: 'https://media.ed.edmunds-media.com/nissan/altima/2017/oem/2017_nissan_altima_sedan_25-sr_fq_oem_2_1280.jpg'},
         // 'Porsche' 32
         // 'Ram' 33
