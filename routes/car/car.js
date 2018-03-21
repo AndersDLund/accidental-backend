@@ -15,24 +15,18 @@ router.get('/:id', function(req, res) {
   console.log(id);
   knex('user_car')
   .where('user_id', id)
-    //.innerJoin('car_model', 'user_car.model_id', 'poop', as, 'car_model.id')
 
-  // .innerJoin('car_model', 'user_car.model_id', 'car_model.id')
-  // .innerJoin('car_make', 'car_model.make_id', 'car_make.id')
+  .innerJoin('car_model', 'user_car.model_id', 'car_model.id')
+  .innerJoin('car_make', 'car_model.make_id', 'car_make.id')
+  
+
     .then((car) => {
       console.log(car, "this is the car!!!!!");
-      let carId = car.id
-      let modelId = car[0].model_id
-      // if (car.length !== 0) {
-      //   res.json(car);
-      // } else {
-      //   res.send("no car found");
-      // }
-console.log(modelId, 'WHATTTTTT')
-        knex('car_model').where('id', modelId)
-    .then((carsss)=> {
-      console.log(carsss, 'BOOOOOOOOOOOOOOOOOOOOOO');
-    })
+      if (car.length !== 0) {
+        res.json(car);
+      } else {
+        res.send("no car found");
+      }
     })
     .catch(function(error) {
       console.log(error);
