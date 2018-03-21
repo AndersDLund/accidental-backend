@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
   knex('car_model')
   .fullOuterJoin('car_make', 'car_model.make_id', 'car_make.id')
   .where('car_model.model', '!=', 'null')
-  .select('model', 'make', 'image', 'model_id')
+  .select('model', 'make', 'image', 'car_model.id as car_model_id')
 
     .then((cars) => {
       if (cars.length !== 0) {
