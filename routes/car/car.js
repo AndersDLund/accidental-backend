@@ -15,7 +15,7 @@ router.get('/:id', function(req, res) {
   console.log(id);
   knex('user_car')
   .where('user_id', id)
-  .select('car_id as id')
+  .select('id as car_id')
   .then((userCar)=>{
     console.log(userCar);
   })
