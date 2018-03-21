@@ -15,8 +15,9 @@ router.get('/', function(req, res) {
   console.log(id);
   knex('car_model')
   .fullOuterJoin('car_make', 'car_model.make_id', 'car_make.id')
-  .select('model', 'make', 'image', 'model_id')
   .where('car_model.model', '!=', 'null')
+  .select('model', 'make', 'image', 'model_id')
+
     .then((cars) => {
       if (cars.length !== 0) {
         res.json(cars);
