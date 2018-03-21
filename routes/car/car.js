@@ -17,7 +17,7 @@ router.get('/:id', function(req, res) {
   .where('user_id', id)
   .fullOuterJoin('car_model', 'user_car.model_id', 'car_model.id')
   .fullOuterJoin('car_make', 'car_model.make_id', 'car_make.id')
-  .select('user_car.id as car_id', 'user_id', 'model_id', 'plate')
+  .select('user_car.id as car_id', 'user_id', 'model_id', 'plate', 'model', 'make', 'image')
     .then((car) => {
       console.log(car, "this is the car!!!!!");
       if (car.length !== 0) {
