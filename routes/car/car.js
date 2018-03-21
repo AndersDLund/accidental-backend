@@ -16,7 +16,7 @@ router.get('/:id', function(req, res) {
   knex('user_car')
   .where('user_id', id)
   .select('user_car.id as car_id', 'user_id', 'model_id', 'plate')
-  .innerJoin('car_model', 'user_car.model_id', 'car_model.id')
+  .fullOuterJoin('car_model', 'user_car.model_id', 'car_model.id')
   .then((userCar)=>{
     console.log(userCar);
   })
