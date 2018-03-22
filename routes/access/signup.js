@@ -12,9 +12,7 @@ router.post('/', function(req, res) {
 
   knex.select('email').from('users').where('email', newUser.email)
     .then((result) => {
-      console.log(result, "booty");
       if (result.length !== 0) {
-        console.log(result, "total booty");
         return res.send('Email already exists');
       }
 console.log("you made it here");
@@ -30,7 +28,7 @@ console.log("you made it here");
         .then(() => {
           console.log("200 ok");
           console.log(result);
-          return res.send(result);
+          return res.send(newUser);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
