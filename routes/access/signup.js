@@ -24,7 +24,7 @@ console.log("you made it here");
           email: newUser.email,
           password: newUser.hashpw,
           organization: newUser.organization
-        }).returning("*")
+        }).returning("email", "id", "organization", "full_name")
         .then((cool) => {
           console.log("200 ok");
           return res.send(cool);
