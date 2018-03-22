@@ -8,7 +8,7 @@ const salt = bcrypt.genSaltSync(8);
 
 router.post('/', function(req, res) {
   let newUser = req.body;
-  console.log(newUser);
+
 
   knex.select('email').from('users').where('email', newUser.email)
     .then((result) => {
@@ -19,16 +19,16 @@ console.log("you made it here");
       return bcrypt.hash(newUser.password, 10, (err, hash) => {
         newUser.hashpw = hash;
 
-        return knex('users').insert({
+        knex('users').insert({
           full_name: newUser.full_name,
           email: newUser.email,
           password: newUser.hashpw,
           organization: newUser.organization
         })
-        .then(() => {
+        .then((poo) => {
           console.log("200 ok");
-          console.log(result);
-          return res.send(newUser);
+          console.log();
+          return res.send(poo);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
