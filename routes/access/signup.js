@@ -19,16 +19,15 @@ console.log("you made it here");
       return bcrypt.hash(newUser.password, 10, (err, hash) => {
         newUser.hashpw = hash;
 
-        knex('users').insert({
+        return knex('users').insert({
           full_name: newUser.full_name,
           email: newUser.email,
           password: newUser.hashpw,
           organization: newUser.organization
         })
-        .then((poo) => {
+        .then(() => {
           console.log("200 ok");
-          console.log();
-          return res.send(poo);
+          return res.sendStatus(200);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
