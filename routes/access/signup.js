@@ -8,6 +8,7 @@ const salt = bcrypt.genSaltSync(8);
 
 router.post('/', function(req, res) {
   let newUser = req.body;
+  console.log(newUser);
 
   knex.select('email').from('users').where('email', newUser.email)
     .then((result) => {
