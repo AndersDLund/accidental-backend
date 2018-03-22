@@ -27,7 +27,7 @@ console.log("you made it here");
         }).returning("email", "id", "organization", "full_name")
         .then((cool) => {
           console.log("200 ok");
-          return res.send(cool);
+          return res.send(cool[0]);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
