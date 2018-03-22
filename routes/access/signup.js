@@ -27,8 +27,8 @@ console.log("you made it here");
           organization: newUser.organization
         }).then(() => {
           console.log("200 ok");
-          console.log(user);
-          return res.send(user);
+          console.log(result);
+          return res.send(result);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
