@@ -25,9 +25,9 @@ console.log("you made it here");
           password: newUser.hashpw,
           organization: newUser.organization
         })
-        .then(() => {
+        .then((cool) => {
           console.log("200 ok");
-          return res.sendStatus(200);
+          return res.send(cool);
         }).catch((err) => {
           console.error(err);
           return res.sendStatus(500);
