@@ -25,6 +25,7 @@ const profileEdit = require('./routes/profile/edit');
 const damageGet = require('./routes/damage/damage');
 // const damageEdit = require('./routes/damage/edit');
 const damageNew = require('./routes/damage/new');
+const damageDelete = require('./routes/damage/delete');
 
 
 const app = express();
@@ -68,6 +69,7 @@ app.use('/profileDelete', profileDelete);
 app.use('/damageGet', damageGet);
 // app.use('/damageEdit', damageEdit);
 app.use('/damageNew', damageNew);
+app.use('/damageDelete', damageDelete);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
