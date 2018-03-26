@@ -3,16 +3,16 @@ const router = express.Router();
 const config = require('../../knexfile.js')['production'];
 const knex = require('knex')(config);
 
-router.put('/:id', function(req, res) {
+router.delete('/:id', function(req, res) {
   const id = req.params.id;
   //knex logic
   knex('car_damages')
     .where('user_car_id', id)
+    .select('damage_type_id')
     .then((damage)=>{
-      console.log(damage[0].damage_type_id, "DAMAGE!!!!")
-      .del()
+      console.log(damage);
     })
-
+    .del()
     .then(() => {
       res.send('DELETED');
     });
