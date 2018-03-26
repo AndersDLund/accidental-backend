@@ -14,10 +14,8 @@ router.delete('/:id', function(req, res) {
       knex('car_damages')
       .where('damage_type_id', firstDamage.damage_type_id)
       .first()
-      .then((delThis)=>{
-      knex('car_damages')
-      .del(delThis)
-      })
+      .del()
+
       .then(()=>{
         res.send('DELETED');
       })
