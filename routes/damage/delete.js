@@ -13,12 +13,10 @@ router.delete('/:id', function(req, res) {
       knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
       .then((damageCool)=>{
-        console.log(damageCool);
-        for (let i = 0; i < req.body.iteration; i++){
-          console.log(damageCool[i], "DELETETETETETETETETETE")
+        console.log(damageCool)
           .first()
           .del()
-        }
+
       })
     })
     .del()
