@@ -9,13 +9,8 @@ router.put('/:id', function(req, res) {
   knex('car_damages')
     .where('user_car_id', id)
     .then((damage)=>{
-      knex('car_damages')
-      .where('damage_type_id', req.body.damage_type_id)
-      .then((damageType)=>{
-      knex('car_damages')
-      .where('damage_type_id', req.body.damage_type_id)
+      console.log(damage[0].damage_type_id, "DAMAGE!!!!")
       .del()
-      })
     })
 
     .then(() => {
