@@ -13,6 +13,8 @@ router.delete('/:id', function(req, res) {
       knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
       .then((damageCool)=>{
+        knex('car_damages')
+        .where('damage_type_id', req.body.damage_type_id)
         console.log(damageCool)
         .update(damageCool.splice(0, 1))
         console.log(damageCool);
