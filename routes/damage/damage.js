@@ -15,6 +15,7 @@ router.get('/:id', function(req, res) {
   console.log(id);
   knex('car_damages').where('user_car_id', id).select('*')
     .then((damage) => {
+      console.log("Damages", damage);
       console.log(damage.length);
       if (damage.length > 0) {
         res.json(damage);
