@@ -9,7 +9,7 @@ router.delete('/:id', function(req, res) {
   knex('car_damages')
     .where('user_car_id', id)
     .then((damage)=>{
-      console.log(damage, "DAMAGE!!!!")
+      console.log(damage[0].damage_type_id, "DAMAGE!!!!")
       .del()
     })
 
