@@ -16,11 +16,8 @@ router.delete('/:id', function(req, res) {
       .where('damage_type_id', req.body.damage_type_id)
       // .limit(limit)
       .first()
-      .then((delThis)=>{
-        console.log(delThis)
-        .del()
-      })
-
+      .del()
+      
       })
       .then(()=>{
         res.send("DELETED");
