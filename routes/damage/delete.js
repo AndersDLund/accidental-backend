@@ -10,10 +10,12 @@ router.delete('/:id', function(req, res) {
   knex('car_damages')
     .where('user_car_id', id)
     .andWhere('damage_type_id', req.body.damage_type_id)
+    .first()
+    .del()
     .then((cool)=>{
       console.log(cool);
     })
-    .del()
+
     })
 
 module.exports = router;
