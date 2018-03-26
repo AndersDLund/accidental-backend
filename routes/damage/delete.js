@@ -13,7 +13,8 @@ router.delete('/:id', function(req, res) {
       console.log(damage)
       return knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
-      .limit(limit)
+      // .limit(limit)
+      .first()
       .del()
       })
       .then((deletedItem)=>{
