@@ -16,12 +16,10 @@ router.put('/:id', function(req, res) {
       .where('damage_type_id', req.body.damage_type_id)
       console.log(damageType[0], 'eeeeeeeee')
       .del()
-      })
-    })
-
-    .then(() => {
+      }).then(() => {
       res.send('DELETED');
     });
+  });
 });
 
 module.exports = router;
