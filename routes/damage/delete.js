@@ -9,7 +9,7 @@ router.put('/:id', function(req, res) {
   knex('car_damages')
     .where('user_car_id', id)
     .then((damage)=>{
-      knex(damage.damage_type_id, req.body.damage_type_id)
+      knex('car_damages', req.body.damage_type_id)
       .then((damageType)=>{
         console.log(damageType);
       })
