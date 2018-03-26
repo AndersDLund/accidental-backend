@@ -14,12 +14,13 @@ router.put('/:id', function(req, res) {
       .then((damageType)=>{
       knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
-      console.log(damageType[0], 'eeeeeeeee')
       .del()
-      }).then(() => {
+      })
+    })
+
+    .then(() => {
       res.send('DELETED');
     });
-  });
 });
 
 module.exports = router;
