@@ -5,6 +5,7 @@ const knex = require('knex')(config);
 
 router.delete('/:id', function(req, res) {
   const id = req.params.id;
+  let limit = req.query.limit || 1;
   //knex logic
   knex('car_damages')
     .where('user_car_id', id)
@@ -12,7 +13,7 @@ router.delete('/:id', function(req, res) {
       console.log(damage)
       return knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
-      .first()
+      .limit(limit)
       .del()
       })
       .then((deletedItem)=>{
