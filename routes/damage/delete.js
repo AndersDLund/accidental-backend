@@ -14,7 +14,7 @@ router.delete('/:id', function(req, res) {
       .where('damage_type_id', req.body.damage_type_id)
       .then((damageCool)=>{
         console.log(damageCool);
-        return damageCool.splice(0, 1)
+        damageCool.splice(0, 1)
         console.log(damageCool);
       })
     })
