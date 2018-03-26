@@ -11,10 +11,10 @@ router.delete('/:id', function(req, res) {
     .where('user_car_id', id)
     .then((damage)=>{
       console.log(damage)
-      return knex('car_damages')
+      knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
       // .limit(limit)
-      .first('user_car_id', 'damage_type_id')
+      .first()
       .del()
       })
       .then((deletedItem)=>{
