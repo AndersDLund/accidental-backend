@@ -17,11 +17,12 @@ router.delete('/:id', function(req, res) {
       // .limit(limit)
       .first()
       .then((delThis)=>{
-        console.log(delThis);
+        console.log(delThis)
+        .del()
       })
-      .del()
+
       })
-      .then((deletedItem)=>{
+      .then(()=>{
         res.send("DELETED");
     })  .catch(function(error) {
         console.log(error);
