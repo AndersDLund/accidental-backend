@@ -17,12 +17,10 @@ router.delete('/:id', function(req, res) {
       })
       .then(()=>{
         res.send('DELETED');
-      })
     })  .catch(function(error) {
         console.log(error);
         res.sendStatus(500);
-
-
+});
 });
 
 module.exports = router;
