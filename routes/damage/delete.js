@@ -15,6 +15,7 @@ router.delete('/:id', function(req, res) {
       .then((damageCool)=>{
         console.log(damageCool);
         return damageCool.splice(0, 1)
+        console.log(damageCool);
       })
     })
     .then(() => {
