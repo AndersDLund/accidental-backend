@@ -13,19 +13,14 @@ router.delete('/:id', function(req, res) {
       knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
       .first()
-      .then((delThis)=>{
-        console.log(delThis);
-      knex('car_damages')
-      .del(delThis)
+      .del()
       })
       .then(()=>{
         res.send('DELETED');
       })
-
     })  .catch(function(error) {
         console.log(error);
         res.sendStatus(500);
-      })
 
 
 });
