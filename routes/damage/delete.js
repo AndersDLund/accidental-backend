@@ -11,11 +11,11 @@ router.put('/:id', function(req, res) {
     .then((damage)=>{
       knex('car_damages')
       .where('damage_type_id', req.body.damage_type_id)
-      console.log(damage[0])
-      .del(damage[0])
-      // .then((damageType)=>{
-      //
-      // })
+      .then((damageType)=>{
+      knex('car_damages')
+      .where('damage_type_id', req.body.damage_type_id)
+      .del(damageType[0])
+      })
     })
 
     .then(() => {
