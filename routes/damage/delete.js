@@ -9,21 +9,11 @@ router.delete('/:id', function(req, res) {
   //knex logic
   knex('car_damages')
     .where('user_car_id', id)
-    .then((damage)=>{
-      console.log(damage)
-      knex('car_damages')
-
-      .where('damage_type_id', req.body.damage_type_id)
-      // .limit(limit)
-      .first()
-      .del()
-      })
-      .then((deletedItem)=>{
-        res.send("DELETED");
+    .andWhere('damage_type_id', req.body.damage_type_id)
+    .del()
     })  .catch(function(error) {
         console.log(error);
         res.sendStatus(500);
-});
 });
 
 module.exports = router;
