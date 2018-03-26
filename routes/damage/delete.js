@@ -14,6 +14,7 @@ router.delete('/:id', function(req, res) {
       .where('damage_type_id', req.body.damage_type_id)
       .first()
       .then((delThis)=>{
+        console.log(delThis);
       knex('car_damages')
       .del(delThis)
       })
