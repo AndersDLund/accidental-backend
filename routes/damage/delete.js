@@ -16,7 +16,8 @@ router.delete('/:id', function(req, res) {
         console.log(damageCool);
         for (let i = 0; i < req.body.iteration; i++){
           console.log(damageCool[i], "DELETETETETETETETETETE")
-          .del(damageCool[i])
+          .first()
+          .del()
         }
       })
     })
