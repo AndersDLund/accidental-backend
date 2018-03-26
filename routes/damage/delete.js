@@ -10,9 +10,10 @@ router.delete('/:id', function(req, res) {
     .where('user_car_id', id)
     .first()
     .then((firstDamage)=>{
-      console.log(firstDamage);
+      console.log(firstDamage)
+      .del(firstDamage)
     })
-    .del()
+
     .then(() => {
       res.send('DELETED');
     });
