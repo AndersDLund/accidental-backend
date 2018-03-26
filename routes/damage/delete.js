@@ -15,14 +15,9 @@ router.delete('/:id', function(req, res) {
 
       .where('damage_type_id', req.body.damage_type_id)
       // .limit(limit)
-      .first()
-      .then((delThis)=>{
-        knex('car_damages')
-        .where('damage_type_id', delThis.damage_type_id)
-        .first()
-        .del()
+      .then((delThis)=> {
+        return knex('car_damages').where('damage_type_id', req.body.damage_type_id).update(delThis.splice(0, 1))
       })
-      
 
       })
       .then(()=>{
