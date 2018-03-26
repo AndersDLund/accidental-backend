@@ -8,6 +8,7 @@ router.delete('/:id', function(req, res) {
   //knex logic
   knex('car_damages')
     .where('user_car_id', id)
+    .first()
     .then((firstDamage)=>{
       console.log(firstDamage)
       knex('car_damages')
