@@ -16,7 +16,7 @@ router.delete('/:id', function(req, res) {
       .del()
       })
       .then((deletedItem)=>{
-        res.send(deletedItem);
+        res.send("DELETED");
     })  .catch(function(error) {
         console.log(error);
         res.sendStatus(500);
