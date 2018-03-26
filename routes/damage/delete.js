@@ -11,12 +11,14 @@ router.delete('/:id', function(req, res) {
     .first()
     .then((firstDamage)=>{
       console.log(firstDamage)
-      .del(firstDamage)
-    })
-
-    .then(() => {
+      .del()
       res.send('DELETED');
-    });
+    })  .catch(function(error) {
+        console.log(error);
+        res.sendStatus(500);
+      })
+
+
 });
 
 module.exports = router;
