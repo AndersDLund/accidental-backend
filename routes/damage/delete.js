@@ -11,8 +11,6 @@ router.delete('/:id', function(req, res) {
     .where('user_car_id', id)
     .andWhere('damage_type_id', req.body.damage_type_id)
     .del()
-    }).then(() => {
-        res.send('DELETED');
-});
+    })
 
 module.exports = router;
